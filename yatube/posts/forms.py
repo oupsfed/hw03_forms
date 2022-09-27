@@ -20,11 +20,3 @@ class PostForm(forms.Form):
         if not data:
             raise forms.ValidationError('Пост не можеть быть без текста!')
         return data
-
-    # def clean_group(self):
-    #     data = self.cleaned_data['group']
-    #     if data == '':
-    #         data = None
-    #     else:
-    #         data = Group.objects.get(pk=data)
-    #     return data
