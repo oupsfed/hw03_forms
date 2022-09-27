@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Технологии{% endblock %}
+{% block content %}
+{% comment %} Колонки с отступом сверху и снизу {% endcomment %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10 p-5">
+    <div class="card">
+      <div class="card-header">
+        Технологии
+      </div>
+      <div class="card-body" style="text-indent: 50px">
+                  <div class="row">
+            <div class="col-4">
+        <div class="card" style="width: 18rem;">
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item active" style="cursor: pointer" id="python">Python</li>
+            <li class="list-group-item" style="cursor: pointer" id="django">Django</li>
+            <li class="list-group-item" style="cursor: pointer" id="bootstrap">Bootstrap</li>
+          </ul>
+            </div></div>
+            <div class="col-8" id="text">
+                Для создания данного сайта использовался Python 3.7
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+  var python = document.getElementById("python")
+  var django = document.getElementById("django")
+  var bootstrap = document.getElementById("bootstrap")
+  var text = document.getElementById("text")
+
+  django.onclick = function() {
+  python.classList.remove('active')
+  django.classList.add('active')
+  bootstrap.classList.remove('active')
+  text.textContent = 'Для создания данного сайта использовался Django 2.2.9'
+  }
+  python.onclick = function() {
+  python.classList.add('active')
+  django.classList.remove('active')
+  bootstrap.classList.remove('active')
+  text.textContent = 'Для создания данного сайта использовался Python 3.7'
+  }
+  bootstrap.onclick = function() {
+  python.classList.remove('active')
+  django.classList.remove('active')
+  bootstrap.classList.add('active')
+  text.textContent = 'Для создания данного сайта использовался Bootstrap 5.1'
+  }
+</script>
+{% endblock %} 
