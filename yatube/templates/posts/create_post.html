@@ -59,6 +59,13 @@
                       >
                         {{ field.help_text|safe }}
                       </small>
+                    {% elif is_edit and field.label == 'Text' %}
+                      <small
+                         id="{{ field.id_for_label }}-help"
+                         class="form-text text-muted"
+                      >
+                        Текст нового поста
+                      </small>
                     {% endif %}
                 </div>
               {% endfor %}

@@ -74,7 +74,6 @@ def post_edit(request, post_id):
             form.save()
             return redirect('posts:post_detail', post_id=post_id)
         return render(request, 'posts/create_post.html', {'form': form})
-    form.fields['text'].help_text = 'Текст нового поста'
     return render(request,
                   'posts/create_post.html',
                   {
